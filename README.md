@@ -1,73 +1,48 @@
-# React + TypeScript + Vite
+# 基于B/S架构的研究生考勤及实验预约系统
+LAMP (Lab & Attendance Management Platform )
+## 研究课题详细内容
+本课题旨在设计并实现一个面向研究生用户的考勤与实验预约系统，采用前后端分离的B/S架构，提升实验教学管理的信息化水平与用户操作便捷性。目前多数实验室仍采用线下签到或微信群预约等方式，存在效率低、信息滞后、统计繁琐等问题，亟需构建一套高效、可扩展的管理平台。
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 技术栈
+vite + react + ts + Ant Design
 
-Currently, two official plugins are available:
+## 功能
+### 研究生
+签到签退，申请请假，查看自己的考勤记录，实验室预约，实验室预约到达签到、离开签到（实验室进出记录），预约记录查询
+### 教师
+查看学生的考勤记录，审核学生请假，实验室预约，实验室预约到达签到、离开签到，预约记录查询
+### 实验室后台管理员（最高权限）
+实验时间段管理，查看所有学生的考勤记录，所有实验室预约记录，用户权限配置，统计分析面板
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 系统界面设计
+### 研究生
+- 个人考勤
+  - 签到、签退
+  - 请假申请
+  - 考勤记录查询
+- 实验室预约
+  - 预约申请
+  - 我的预约
+  - 进出签到
+- 个人中心（修改密码/信息）
 
-## React Compiler
+### 教师
+- 考勤管理
+  - 学生考勤查询
+  - 请假审批
+- 实验室预约
+  - 预约申请
+  - 记录查询
+    - 学生预约记录
+    - 个人预约记录
+- 个人中心（修改密码/信息）
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 实验室后台管理员
+- 统计分析
+- 数据监控
+  - 所有考勤记录
+  - 所有预约记录
+- 系统配置
+  - 实验时间段管理
+  - 用户权限配置
+- 个人中心（修改密码/信息）
